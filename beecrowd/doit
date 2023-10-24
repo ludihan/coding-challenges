@@ -1,0 +1,22 @@
+#!/bin/bash
+
+read -p "LANG: " LANG
+
+read -p "PROBLEM / DIR: " DIR
+
+if [ $LANG = "c" ] ; then
+    gcc $DIR/main.c -o main -std=c99 -O2 -lm -Werror -Wall -Wextra -Wpedantic
+fi
+
+if [ $LANG = "go" ] ; then
+    go run $DIR/main.go
+fi
+
+if [ $LANG = "rust" ] ; then
+    rustc $DIR/main.rs
+fi
+
+if [ "$?" -eq "0" ] ; then
+    echo DONE COMPILING &&
+    ./main
+fi
