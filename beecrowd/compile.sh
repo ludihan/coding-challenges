@@ -11,5 +11,9 @@ if [ $LANG = "c" ] ; then
 fi
 
 if [ $LANG = "go" ] ; then
-    go run $DIR/main.go
+    go run $DIR/main.go && ./main
+fi
+
+if [ $LANG = "rust" ] ; then
+    rustc $DIR/main.rs && ./main
 fi
