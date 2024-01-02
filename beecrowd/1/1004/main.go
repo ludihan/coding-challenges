@@ -1,11 +1,11 @@
 package main
 
 import (
-    "fmt"
+	"fmt"
 )
 
 func main() {
-    var A,B int
-    fmt.Scanf("%v\n%v", &A, &B)
-    fmt.Println("PROD =", A*B)
+	var A, B int
+	fmt.Scanf("%v\n%v", &A, &B)
+	fmt.Println("PROD =", A*B)
 }

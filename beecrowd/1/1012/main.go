@@ -13,5 +13,5 @@ func main() {
 	fmt.Printf("TRAPEZIO: %.3f\n", ((A+B)*C)/2)
 	fmt.Printf("QUADRADO: %.3f\n", B*B)
 	fmt.Printf("RETANGULO: %.3f\n", A*B)
-    fmt.Scanf("%f", &A)
+	fmt.Scanf("%f", &A)
 }

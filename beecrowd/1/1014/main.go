@@ -1,11 +1,11 @@
 package main
 
 import (
-    "fmt"
+	"fmt"
 )
 
 func main() {
-    var X, Y float64
-    fmt.Scanf("%v\n%v", &X, &Y)
-    fmt.Printf("%.3f km/l\n", X / Y)
+	var X, Y float64
+	fmt.Scanf("%v\n%v", &X, &Y)
+	fmt.Printf("%.3f km/l\n", X/Y)
 }
