@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <math.h>
 #include <stdlib.h>
 
 int maiorAB(int A, int B) {
@@ -15,4 +14,3 @@ int main(void) {
     printf("%d eh o maior\n", maior);
     return 0;
 }
-
