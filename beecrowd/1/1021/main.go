@@ -2,24 +2,27 @@ package main
 
 import (
 	"fmt"
-	"math"
 )
 
 func main() {
-	var dinheiro float64
-	var valores = [...]float64{100, 50, 20, 10, 5, 2, 1, .5, .25, .10, .05, .01}
-	fmt.Scan(&dinheiro)
+	var dinheiroF float32
+	var dinheiro int
+	var valores = [...]int{10000, 5000, 2000, 1000, 500, 200, 100, 50, 25, 10, 5, 1}
+	fmt.Scanf("%f", &dinheiroF)
+	dinheiro = int(dinheiroF * 100)
 	fmt.Println("NOTAS:")
 	for i, v := range valores {
-		valores[i] = math.Floor(dinheiro / v)
+        //fmt.Println("DINHEIRO:", dinheiro)
+		valores[i] = dinheiro / v
 		dinheiro -= valores[i] * v
 		if i < 6 {
-			fmt.Printf("%.0f nota(s) de R$ %.2f\n", valores[i], v)
+			fmt.Printf("%v nota(s) de R$ %.2f\n", valores[i], float32(v)/100)
 		} else {
 			if i == 6 {
 				fmt.Println("MOEDAS:")
 			}
-			fmt.Printf("%.0f moeda(s) de R$ %.2f\n", valores[i], v)
+			fmt.Printf("%v moeda(s) de R$ %.2f\n", valores[i], float64(v)/100)
 		}
 	}
+    //fmt.Println(valores)
 }
