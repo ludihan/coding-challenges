@@ -12,7 +12,7 @@ func main() {
 	dinheiro = int(dinheiroF * 100)
 	fmt.Println("NOTAS:")
 	for i, v := range valores {
-        //fmt.Println("DINHEIRO:", dinheiro)
+		//fmt.Println("DINHEIRO:", dinheiro)
 		valores[i] = dinheiro / v
 		dinheiro -= valores[i] * v
 		if i < 6 {
@@ -24,5 +24,5 @@ func main() {
 			fmt.Printf("%v moeda(s) de R$ %.2f\n", valores[i], float64(v)/100)
 		}
 	}
-    //fmt.Println(valores)
+	//fmt.Println(valores)
 }
