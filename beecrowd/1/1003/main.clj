@@ -1,0 +1,4 @@
+(println "SOMA" "="
+         (+
+          (read)
+          (read)))

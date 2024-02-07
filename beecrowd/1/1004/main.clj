@@ -1,0 +1,4 @@
+(println "PROD" "="
+         (*
+          (read)
+          (read)))
