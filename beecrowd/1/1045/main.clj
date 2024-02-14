@@ -1,0 +1,16 @@
+(let [input (into [] (sort > [(read)
+                              (read)
+                              (read)]))
+      A (get input 0)
+      B (get input 1)
+      C (get input 2)]
+  (if (>= A (+ B C))
+    (println "NAO FORMA TRIANGULO")
+    (do
+      (if (= (* A A) (+ (* B B) (* C C))) (println "TRIANGULO RETANGULO"))
+      (if (> (* A A) (+ (* B B) (* C C))) (println "TRIANGULO OBTUSANGULO"))
+      (if (< (* A A) (+ (* B B) (* C C))) (println "TRIANGULO ACUTANGULO"))
+      (if (= A B C) (println "TRIANGULO EQUILATERO"))
+      (if (or (and (= A B) (not= A C) (not= B C))
+              (and (= B C) (not= A C) (not= B A))
+              (and (= C A) (not= B C) (not= A B))) (println "TRIANGULO ISOSCELES")))))
