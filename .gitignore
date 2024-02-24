@@ -1,0 +1,6 @@
+main
+doit
+.clj-kondo/*
+.lsp/*
+beecrowd/.clj-kondo/*
+beecrowd/.lsp/*
