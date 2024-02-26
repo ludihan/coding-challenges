@@ -2,8 +2,6 @@
                (read)
                (read)]]
 
-  (doseq [n (sort numlist)]
-    (printf "%d\n" n))
+  (dorun (map #(printf "%d\n" %) (sort numlist)))
   (newline)
-  (doseq [n numlist]
-    (printf "%d\n" n)))
+  (dorun (map #(printf "%d\n" %) numlist)))
