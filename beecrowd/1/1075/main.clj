@@ -1,6 +1,4 @@
 (let [N (read)]
   (dorun
-    (map #(printf "%d\n" %)
-         (filter
-             #(== 2 (mod % N))
-             (range 1 10001)))))
+    (map #(if (== 2 (mod % N)) (printf "%d\n" %))
+         (range 1 10001))))

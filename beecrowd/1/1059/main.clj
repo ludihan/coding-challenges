@@ -1,4 +1,3 @@
-(doall
+(dorun
   (map
-    #(printf "%d\n" %)
-    (filter even? (range 1 101))))
+    #(printf "%d\n" %) (range 2 102 2)))
