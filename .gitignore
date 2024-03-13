@@ -1,6 +1,8 @@
 main
-doit
+a.out
 .clj-kondo/*
 .lsp/*
 beecrowd/.clj-kondo/*
 beecrowd/.lsp/*
+beecrowd/a.out
+beecrowd/main
