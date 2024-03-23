@@ -1,7 +1,7 @@
 #include <iostream>
 #include <iomanip>
 
-int main(void) {
+int main() {
     std::string nome;
     double salario, venda;
     std::cin >> nome;
