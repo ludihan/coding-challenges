@@ -1,31 +1,31 @@
 package main
 
 import (
-	"fmt"
-	"log"
+    "fmt"
+    "log"
 )
 
 func main() {
-	var n int
-	var N, D [2]int
-	var operation byte
-	for fmt.Scan(&n); n > 0; n-- {
+    var n int
+    var N, D [2]int
+    var operation byte
+    for fmt.Scan(&n); n > 0; n-- {
         n, e := fmt.Scanf("%d / %d %c %d / %d", &N[0], &D[0], &operation, &N[1], &D[1])
         if e != nil {
             fmt.Println(n)
             log.Fatalln(e)
         }
-		calc(N, D, operation)
-	}
+        calc(N, D, operation)
+    }
 }
 
 func calc(N, D [2]int, operation byte) {
     var values [4]int
     var gcd int
-	if operation == '+' {
+    if operation == '+' {
         values[0] = (N[0] * D[1] + N[1] * D[0])
         values[1] = (D[0] * D[1])
-	} else if operation == '-' {
+    } else if operation == '-' {
         values[0] = (N[0] * D[1] - N[1] * D[0])
         values[1] = (D[0] * D[1])
     } else if operation == '*' {
@@ -49,11 +49,11 @@ func calc(N, D [2]int, operation byte) {
     }
 
     fmt.Printf("%d/%d = %d/%d\n",
-        values[0],
-        values[1],
-        values[2],
-        values[3],
-    )
+    values[0],
+    values[1],
+    values[2],
+    values[3],
+)
 }
 
 func findGCD(n1, n2 int) int {
