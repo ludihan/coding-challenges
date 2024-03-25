@@ -1,0 +1,10 @@
+line = input().split()
+A = float(line[0])
+B = float(line[1])
+C = float(line[2])
+
+print("TRIANGULO: %.3f" % ((A * C) / 2))
+print("CIRCULO: %.3f" % (3.14159 * (C ** 2)))
+print("TRAPEZIO: %.3f" % (((A+B) * C)/2))
+print("QUADRADO: %.3f" % (B * B))
+print("RETANGULO: %.3f" % (A * B))

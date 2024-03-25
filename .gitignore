@@ -6,3 +6,5 @@ beecrowd/.clj-kondo/*
 beecrowd/.lsp/*
 beecrowd/a.out
 beecrowd/main
+beecrowd/*/Main.class
+beecrowd/Main.class

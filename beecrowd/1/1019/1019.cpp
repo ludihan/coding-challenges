@@ -1,6 +1,6 @@
 #include <iostream>
 
-int main(void) {
+int main() {
     int segundos = 0;
     int tempo[3] = {60 * 60, 60, 1};
     std::cin >> segundos;
