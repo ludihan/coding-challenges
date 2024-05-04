@@ -1,62 +1,76 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//TODO
-void colorir(int **c, int i_pos, int j_pos, int i_max, int j_max) {
+// TODO
 
+struct Position {
+    int N;
+    int M;
+};
+
+struct Size {
+    int N;
+    int M;
+};
+
+void pintar(char **c, struct Position pos, struct Size *size) {
+    printf("%d %d", pos.N, pos.M);
+    if (pos.N >= 0 && pos.N < size->N
+            && pos.M >= 0 && pos.M < size->M) {
+        switch(c[pos.N][pos.M]) {
+            case '.':
+                if (c[pos.N - 1][pos.M] == 'o'
+                        || (c[pos.N][pos.M - 1] == 'o' && c[pos.N + 1][pos.M - 1] == '#')
+                        || (c[pos.N][pos.M + 1] == 'o' && c[pos.N + 1][pos.M + 1] == '#')) {
+                    c[pos.N][pos.M] = 'o';
+                }
+                break;
+            case 'o':
+                pintar(c, (struct Position){pos.N + 1, pos.M    }, size);
+                pintar(c, (struct Position){pos.N    , pos.M + 1}, size);
+                pintar(c, (struct Position){pos.N    , pos.M - 1}, size);
+                break;
+            case '#':
+                break;
+        }
+    }
 }
 
 int main(void) {
     int N, M;
+
+
     scanf("%d %d ", &N, &M);
+
+    struct Size size = {
+        N,
+        M,
+    };
+
     char **c = malloc(sizeof(char *) * N);
     for (int i = 0; i < N; i++) {
         c[i] = malloc(sizeof(char) * M);
     }
 
-    for (int i = 0; i < N; i++) {
-        for (int j = 0; j < M; j++) {
-            c[i][j] = getchar();
-        }
-        getchar();
-    }
+    struct Position initialPos;
 
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < M; j++) {
-            putchar(c[i][j]);
+            scanf(" %c", &c[i][j]);
         }
-        putchar('\n');
     }
+
 
     for (int i = 0; i < N; i++) {
-        for (int j = 0; j < M; j++) {
-            if (c[i][j] == '.') {
-                printf("%d %d\n", i, j);
-                if (i > 0) {
-                    if (c[i - 1][j] == 'o') {
-                        c[i][j] = 'o';
-                    }
-                }
-
-                if (i < N - 1) {
-                    if (j > 0) {
-                        puts("oii");
-                        if (c[i][j - 1] == 'o' && c[i + 1][j - 1] == '#') {
-                            c[i][j] = 'o';
-                        }
-                    }
-
-                    if (j < M - 1) {
-                        puts("oii2");
-                        if (c[i][j + 1] == 'o' && c[i + 1][j + 1] == '#') {
-                            c[i][j] = 'o';
-                        }
-                    }
-                }
-            }
+        if (c[0][i] == 'o') {
+            initialPos.N = 0;
+            initialPos.M = i;
         }
     }
 
+    pintar(c, initialPos, &size);
+
+    puts("#######################\n");
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < M; j++) {
             putchar(c[i][j]);
@@ -64,7 +78,6 @@ int main(void) {
         putchar('\n');
     }
 
-    //free
     for (int i = 0; i < N; i++) {
         free(c[i]);
     }

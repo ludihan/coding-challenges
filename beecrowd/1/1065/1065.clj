@@ -1,1 +1,1 @@
-(println (count (filter even? (repeatedly 6 read))) "valores pares")
+(println (count (filter even? (repeatedly 5 read))) "valores pares")
